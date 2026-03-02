@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="header">Buyer Marketplace 🛒</div>
+
+<div class="container">
+
+{% for crop in crops %}
+<div class="card">
+<h3>{{crop[2]}}</h3>
+<p>Quantity: {{crop[3]}}</p>
+
+<form action="/offer" method="post">
+<input name="buyer" placeholder="Buyer Name">
+<input type="hidden" name="crop_id" value="{{crop[0]}}">
+<input name="price" placeholder="Your Offer Price">
+<button type="submit">Place Offer</button>
+</form>
+</div>
+{% endfor %}
+
+</div>
