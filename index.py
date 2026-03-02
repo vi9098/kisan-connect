@@ -8,7 +8,7 @@ if not os.path.exists('database.db'):
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 def connect_db():
-    return sqlite3.connect('database.db')
+    return sqlite3.connect('/tmp/database.db')
 
 @app.route('/')
 def home():
