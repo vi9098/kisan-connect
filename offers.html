@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="header">Farmer Offer Dashboard 📊</div>
+
+<div class="container">
+
+{% for offer in offers %}
+<div class="card">
+<p><strong>Crop:</strong> {{offer[1]}}</p>
+<p><strong>Offer:</strong> ₹{{offer[2]}}</p>
+<p class="status">Status: {{offer[3]}}</p>
+
+{% if offer[3] == 'Pending' %}
+<a href="/accept/{{offer[0]}}">
+<button class="accept-btn">Accept Offer</button>
+</a>
+{% endif %}
+</div>
+{% endfor %}
+
+</div>
