@@ -1,3 +1,8 @@
+
+import os
+
+if not os.path.exists('/tmp/database.db'):
+    import init_db
 from flask import Flask, render_template, request, redirect
 import sqlite3
 import os
