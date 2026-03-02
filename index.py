@@ -5,7 +5,7 @@ import os
 if not os.path.exists('database.db'):
     import init_db
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 def connect_db():
     return sqlite3.connect('database.db')
