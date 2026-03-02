@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('/tmp/database.db')
 c = conn.cursor()
 
 c.execute('''CREATE TABLE IF NOT EXISTS farmers
